@@ -1,0 +1,36 @@
+<mat-spinner class="spinner" *ngIf="!showinfo"></mat-spinner>
+<br><br>
+<br>
+<br><br>
+<br>
+<div *ngIf="showinfo" class="container">
+    <div class="container">
+        <div class="  col-lg-12  col-md-11 col-sm-12  my-5 " style="float: left; ">
+            <h1> <strong><b> {{noticia.titulo}} </b> </strong> </h1>
+            <br>
+            <br>
+            <div class="row">
+                <div style=" width:  10%"></div>
+                <div class="" style=" width:  80%; align-items: center">
+                    <img style="height: 500px; width:  100%;" mat-card-image src="{{noticia.img}}" alt="Photo of a Shiba Inu">
+                </div>
+                <br><br>
+                <div *ngFor="let item of contenidoNoticia; index as i; trackBy: trackByFn">
+                    <p class="stilo"> {{item}} </p>
+                </div>
+            </div>
+
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
