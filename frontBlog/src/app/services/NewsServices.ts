@@ -1,3 +1,4 @@
+import { Person } from './../models/Person';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -12,11 +13,15 @@ export class NewsServices {
         return this.http.get<JSON>(`http://localhost:3000/person/`);
     }
 
-    public requestNews(tipo: string): Observable<JSON> {
-        return this.http.get<JSON>(`http://localhost:3000/news/${tipo}`);
+    public insertPerson(person: Person): Observable<JSON> {
+        return this.http.post<JSON>(`http://localhost:3000/person`, person);
     }
 
-    public requestNew(url: string): Observable<JSON> {
-        return this.http.post<JSON>(`http://localhost:3000/noticia`, {"link": url});
+    public UpdatePerson(person: Person): Observable<JSON> {
+        return this.http.put<JSON>(`http://localhost:3000/person`, person);
+    }
+    
+    public deletePerson(id_person: number): Observable<JSON> {
+        return this.http.delete<JSON>(`http://localhost:3000/person/`+id_person );
     }
 }

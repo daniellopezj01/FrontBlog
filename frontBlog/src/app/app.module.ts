@@ -5,17 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContainerComponent } from './components/container/container.component';
-import { ShowNewComponent } from './components/show-new/show-new.component';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import {  RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {DataTableModule} from "angular-6-datatable";
-
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LayoutModule } from '@angular/cdk/layout';
-import { APP_BASE_HREF } from '@angular/common';
-import { CommonModule }   from '@angular/common';
+
 import { PublicationsComponent } from './components/publications/publications.component';
 import { PersonsComponent } from './components/persons/persons.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
@@ -27,7 +25,6 @@ import { InsertUpdatePersonComponent } from './components/insert-update-person/i
     AppComponent,
     HomeComponent,
     ContainerComponent,
-    ShowNewComponent,
     PublicationsComponent,
     PersonsComponent,
     BlogsComponent,
@@ -44,6 +41,7 @@ import { InsertUpdatePersonComponent } from './components/insert-update-person/i
     HttpClientModule,
     DataTableModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   entryComponents:[
     InsertUpdatePersonComponent

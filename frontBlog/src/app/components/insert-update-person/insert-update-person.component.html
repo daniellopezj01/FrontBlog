@@ -1,44 +1,49 @@
 <div style="align-items: center" class=" prin">
     <div class=" text-center">
-        <h4 class=" w-100 font-weight-bold">Realiza tu oferta</h4>
+        <h4 class=" w-100 font-weight-bold">
+            {{tittle}} person</h4>
     </div>
     <br>
     <div class="container">
-        <form [formGroup]="registerForm" (ngSubmit)="publicOffer()">
+        <form [formGroup]="registerForm" (ngSubmit)="insertOrUpdatePerson()">
             <div class="row">
                 <div class="nombre">
-                    <input placeholder="Nombre" type="text" formControlName="nombre" class="form-control medio" [(ngModel)]="detalle.nombre_diseniador" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+                    <input placeholder="First name" type="text" formControlName="nombre" class="form-control medio" [(ngModel)]="person.name" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
                     <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-                        <div *ngIf="f.nombre.errors.required">Nombre obligatorio</div>
+                        <div *ngIf="f.nombre.errors.required">Name Required</div>
                     </div>
                 </div>
 
                 <div class="apellido">
-                    <input placeholder="Apellido" type="text" formControlName="apellido" class="form-control medio" [(ngModel)]="detalle.apellido_diseniador" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
+                    <input placeholder="Last name" type="text" formControlName="apellido" class="form-control medio" [(ngModel)]="person.last_name" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
                     <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
-                        <div *ngIf="f.apellido.errors.required">apellido obligatorio</div>
+                        <div *ngIf="f.apellido.errors.required">Last Name Required</div>
                     </div>
                 </div>
             </div>
             <br>
-            <input placeholder="Email" type="text" formControlName="email" class="form-control" [(ngModel)]="detalle.email_diseniador" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                <div *ngIf="f.email.errors.required">Email es obligatorio</div>
-                <div *ngIf="f.email.errors.email">example@xample.com</div>
+            <input placeholder="Birthdate" type="text" formControlName="Birthdate" class="form-control" [(ngModel)]="person.birthdate" [ngClass]="{ 'is-invalid': submitted && f.Birthdate.errors }" />
+            <div *ngIf="submitted && f.Birthdate.errors" class="invalid-feedback">
+                <div *ngIf="f.Birthdate.errors.required">Birthdate Required</div>
             </div>
             <br>
-            <input #fileinput placeholder="diseño" type="file" formControlName="disenio" name="disenio" accept=".png,.jpg,.jpeg" class="form-control" (change)="captureFile($event)" [ngClass]="{ 'is-invalid': submitted && f.disenio.errors }" />
-            <div *ngIf="submitted && f.disenio.errors" class="invalid-feedback">
-                <div *ngIf="f.disenio.errors.required">disenio es obligatorio</div>
-            </div>
-            <br>
-            <input placeholder="precio" type="number" formControlName="precio" class="form-control" [(ngModel)]="detalle.precio" [ngClass]="{ 'is-invalid': submitted && f.precio.errors }" />
-            <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
-                <div *ngIf="f.precio.errors.required">valor obligatorio</div>
+            <div class="row">
+                <div class="nombre">
+                    <input placeholder="Type person" type="text" formControlName="type" class="form-control" [(ngModel)]="person.type" [ngClass]="{ 'is-invalid': submitted && f.type.errors }" />
+                    <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                        <div *ngIf="f.type.errors.required">type Required</div>
+                    </div>
+                </div>
+                <div class="apellido">
+                    <input placeholder="articles" type="number" formControlName="articulos" class="form-control" [(ngModel)]="person.articulos" [ngClass]="{ 'is-invalid': submitted && f.articulos.errors }" />
+                    <div *ngIf="submitted && f.articulos.errors" class="invalid-feedback">
+                        <div *ngIf="f.articulos.errors.required">Articles Required</div>
+                    </div>
+                </div>
             </div>
             <br>
             <div class="form-group md-8" style="text-align: center">
-                <button class="btn btn-primary">Publicar Oferta</button>
+                <button class="btn btn-primary">{{tittle}} Person</button>
             </div>
         </form>
     </div>

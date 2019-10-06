@@ -1,7 +1,7 @@
+import { Person } from './../../models/Person';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
-import { MessageService } from '../../services/MessageService';
 import { NewsServices } from './../../services/NewsServices';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InsertUpdatePersonComponent } from '../insert-update-person/insert-update-person.component';
@@ -18,19 +18,22 @@ export class PersonsComponent implements OnInit {
   showinfo: boolean;
   listInfo: any;
   headElements = ['ID', 'nombre', 'apellido', 'F Nacimiento', 'Tipo', 'eliminar', 'actualizar'];
+  name: number;
+  sendperson: Person;
 
-  constructor(public dialog: MatDialog, private messageService: MessageService, private _router: Router, private NewsServices: NewsServices) {
+  constructor(public dialog: MatDialog, private _router: Router, private NewsServices: NewsServices) {
     this.showinfo = false;
     this.loadPersons();
   }
 
-  openDialog(): void {
+  insert(): void {
     const dialogRef = this.dialog.open(InsertUpdatePersonComponent, {
-
+      data: { name: 1 }
     });
-
     dialogRef.afterClosed().subscribe(result => {
-
+      this.NewsServices.requestPerson().subscribe(res => {
+        this.listInfo = res;
+      });
     });
   }
 
@@ -50,13 +53,31 @@ export class PersonsComponent implements OnInit {
     this.loadPersons();
   }
 
-  delete(valor) {
-    console.log(valor);
+  delete(id_person) {
+    var opcion = confirm("¿Estas seguro(@)?");
+    if (opcion == true) {
+      this.NewsServices.deletePerson(id_person).subscribe(res => {
+        if (res['status'] == 200) {
+          this.NewsServices.requestPerson().subscribe(res => {
+            this.listInfo = res;
+          });
+          console.log("hola");
+        } else {
+          alert("Ocurrio un error")
+        }
+      })
+    }
   }
 
-
   update(valor) {
-    console.log(valor);
+    const dialogRef = this.dialog.open(InsertUpdatePersonComponent, {
+      data: { name: 2, sendperson: valor }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.NewsServices.requestPerson().subscribe(res => {
+        this.listInfo = res;
+      });
+    });
   }
 }
 

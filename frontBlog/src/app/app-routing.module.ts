@@ -5,7 +5,6 @@ import { ContainerComponent } from './components/container/container.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { ShowNewComponent } from './components/show-new/show-new.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 
 const routes: Routes = [

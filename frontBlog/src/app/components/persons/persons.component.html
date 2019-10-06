@@ -8,7 +8,7 @@
     <br>
 
     <div style="text-align: center">
-        <button mdbBtn type="button" block="true" color="success" outline="true" (click)="openDialog()" mdbWavesEffect>Insert</button>
+        <button mdbBtn type="button" block="true" color="success" outline="true" (click)="insert()" mdbWavesEffect>Insert</button>
     </div>
     <br>
     <table mdbTable>
@@ -25,7 +25,7 @@
                 <td>{{item.birthdate}}</td>
                 <td>{{item.type}}</td>
                 <td> <button mdbBtn type="button" color="danger" outline="true" (click)="delete(item.id_person)" mdbWavesEffect>Delete</button></td>
-                <td><button mdbBtn type="button" color="secondary" outline="true" (click)="update(item.id_person)" mdbWavesEffect>Update</button></td>
+                <td><button mdbBtn type="button" color="secondary" outline="true" (click)="update(item)" mdbWavesEffect>Update</button></td>
             </tr>
         </tbody>
     </table>
