@@ -19,6 +19,7 @@ import { PersonsComponent } from './components/persons/persons.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { InsertUpdatePersonComponent } from './components/insert-update-person/insert-update-person.component';
+import { InsertUpdatePublicationsComponent } from './components/insert-update-publications/insert-update-publications.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InsertUpdatePersonComponent } from './components/insert-update-person/i
     PersonsComponent,
     BlogsComponent,
     CommentsComponent,
-    InsertUpdatePersonComponent
+    InsertUpdatePersonComponent,
+    InsertUpdatePublicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import { InsertUpdatePersonComponent } from './components/insert-update-person/i
     FormsModule
   ],
   entryComponents:[
-    InsertUpdatePersonComponent
+    InsertUpdatePersonComponent, InsertUpdatePublicationsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

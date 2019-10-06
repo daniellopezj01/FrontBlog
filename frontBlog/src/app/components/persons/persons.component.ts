@@ -1,6 +1,5 @@
 import { Person } from './../../models/Person';
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { NewsServices } from './../../services/NewsServices';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -14,7 +13,6 @@ import { InsertUpdatePersonComponent } from '../insert-update-person/insert-upda
 export class PersonsComponent implements OnInit {
 
   message: string = "Persons";
-  subscription: Subscription;
   showinfo: boolean;
   listInfo: any;
   headElements = ['ID', 'nombre', 'apellido', 'F Nacimiento', 'Tipo', 'eliminar', 'actualizar'];
@@ -45,9 +43,6 @@ export class PersonsComponent implements OnInit {
     });
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
 
   ngOnInit() {
     this.loadPersons();

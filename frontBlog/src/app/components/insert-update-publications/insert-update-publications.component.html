@@ -1,0 +1,31 @@
+<div style="align-items: center" class=" prin">
+    <div class=" text-center">
+        <h4 class=" w-100 font-weight-bold">
+            {{tittle}} publication</h4>
+    </div>
+    <br>
+    <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="insertOrUpdatePerson()">
+            <input placeholder="Title" type="text" formControlName="title" class="form-control medio" [(ngModel)]="publication.public_title" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required">title Required</div>
+            </div>
+            <br>
+            <input placeholder="description" type="text" formControlName="description" class="form-control medio" [(ngModel)]="publication.desc_publication" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">description Required</div>
+            </div>
+            <br>
+            <input placeholder="Autor" type="text" formControlName="Autor" class="form-control" [(ngModel)]="publication.author" [ngClass]="{ 'is-invalid': submitted && f.Autor.errors }" />
+            <div *ngIf="submitted && f.Autor.errors" class="invalid-feedback">
+                <div *ngIf="f.Autor.errors.required">Autor Required</div>
+            </div>
+            <br>
+
+            <br>
+            <div class="form-group md-8" style="text-align: center">
+                <button class="btn btn-primary">{{tittle}} publication</button>
+            </div>
+        </form>
+    </div>
+</div>
