@@ -1,0 +1,35 @@
+<div style="align-items: center" class=" prin">
+    <div class=" text-center">
+        <h4 class=" w-100 font-weight-bold">
+            {{tittle}} Blog</h4>
+    </div>
+    <br>
+    <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="insertOrUpdatePerson()">
+            <input placeholder=" title" type="text" formControlName="blog_title" class="form-control medio" [(ngModel)]="blog.blog_title" [ngClass]="{ 'is-invalid': submitted && f.blog_title.errors }" />
+            <div *ngIf="submitted && f.blog_title.errors" class="invalid-feedback">
+                <div *ngIf="f.blog_title.errors.required">title Required</div>
+            </div>
+            <br>
+            <input placeholder="description" type="text" formControlName="description_blog" class="form-control medio" [(ngModel)]="blog.description_blog" [ngClass]="{ 'is-invalid': submitted && f.description_blog.errors }" />
+            <div *ngIf="submitted && f.description_blog.errors" class="invalid-feedback">
+                <div *ngIf="f.description_blog.errors.required">description Required</div>
+            </div>
+            <br>
+            <input placeholder="category" type="text" formControlName="category" class="form-control" [(ngModel)]="blog.category" [ngClass]="{ 'is-invalid': submitted && f.category.errors }" />
+            <div *ngIf="submitted && f.Autor.errors" class="invalid-feedback">
+                <div *ngIf="f.category.errors.required">category Required</div>
+            </div>
+            <br>
+            <input placeholder="manager" type="text" formControlName="manager" class="form-control medio" [(ngModel)]="blog.manager" [ngClass]="{ 'is-invalid': submitted && f.manager.errors }" />
+            <div *ngIf="submitted && f.manager.errors" class="invalid-feedback">
+                <div *ngIf="f.manager.errors.required">manager Required</div>
+            </div>
+
+            <br>
+            <div class="form-group md-8" style="text-align: center">
+                <button class="btn btn-primary">{{tittle}} Blog</button>
+            </div>
+        </form>
+    </div>
+</div>

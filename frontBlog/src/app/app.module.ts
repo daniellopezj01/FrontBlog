@@ -20,6 +20,8 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { InsertUpdatePersonComponent } from './components/insert-update-person/insert-update-person.component';
 import { InsertUpdatePublicationsComponent } from './components/insert-update-publications/insert-update-publications.component';
+import { InsertUpdateBlogsComponent } from './components/insert-update-blogs/insert-update-blogs.component';
+import { InsertUpdateCommentsComponent } from './components/insert-update-comments/insert-update-comments.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { InsertUpdatePublicationsComponent } from './components/insert-update-pu
     BlogsComponent,
     CommentsComponent,
     InsertUpdatePersonComponent,
-    InsertUpdatePublicationsComponent
+    InsertUpdatePublicationsComponent,
+    InsertUpdateBlogsComponent,
+    InsertUpdateCommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,7 @@ import { InsertUpdatePublicationsComponent } from './components/insert-update-pu
     FormsModule
   ],
   entryComponents:[
-    InsertUpdatePersonComponent, InsertUpdatePublicationsComponent
+    InsertUpdatePersonComponent, InsertUpdatePublicationsComponent, InsertUpdateBlogsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

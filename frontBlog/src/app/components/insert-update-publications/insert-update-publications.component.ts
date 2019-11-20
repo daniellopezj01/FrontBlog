@@ -1,10 +1,7 @@
-import { Person } from './../../models/Person';
-import { PersonsComponent } from './../persons/persons.component';
 import { Component, OnInit, Inject, Injectable } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { NewsServices } from './../../services/NewsServices';
 import { Publication } from 'src/app/models/publications';
 import { PublicationsComponent } from '../publications/publications.component';
 import { PublicationsService } from 'src/app/services/PublicationsService';
