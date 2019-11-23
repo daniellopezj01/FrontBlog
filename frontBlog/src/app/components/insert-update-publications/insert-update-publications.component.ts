@@ -5,6 +5,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { Publication } from 'src/app/models/publications';
 import { PublicationsComponent } from '../publications/publications.component';
 import { PublicationsService } from 'src/app/services/PublicationsService';
+
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
